@@ -51,4 +51,6 @@ function gameSet(){
 function drawSquare(row,col){
     c.style.display = "block";
     ctx.fillRect(col*blocksize,now*blocksize,blocksize,blocksize);
+    ctx.strokeStyle="blank";
+    ctx.strokeRect(col* blocksize,row*blocksize,blocksize,blocksize);
 }
