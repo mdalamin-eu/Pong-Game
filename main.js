@@ -18,3 +18,37 @@ var board= [
 var turn = 0;
 var totalBlack=2;
 var totalWhite= 2;
+
+function init (){
+    document.getElementById("btnStart").innerHTML="RESTART";
+    c.style.display="block";
+    ctx.fillStyle="lightblue"
+    ctx.fillRect(0,0,width,height);
+    board=[
+        [-1,-1,-1,-1,-1,-1,-1,-1],
+        [-1,-1,-1,-1,-1,-1,-1,-1],
+        [-1,-1,-1,-1,-1,-1,-1,-1],
+        [-1,-1,-1,white,black,-1,-1,-1],
+        [-1,-1,-1,black,white,-1,-1,-1],
+        [-1,-1,-1,-1,-1,-1,-1,-1],
+        [-1,-1,-1,-1,-1,-1,-1,-1],
+        [-1,-1,-1,-1,-1,-1,-1,-1]
+    ];
+    turn =0;
+    totalBlack= 2;
+    totalWhite= 2;
+    gameSet();
+}
+
+function gameSet(){
+    noMove(turn);
+    display();
+    status();
+    Info();
+    listener();
+}
+
+function drawSquare(row,col){
+    c.style.display = "block";
+    ctx.fillRect(col*blocksize,now*blocksize,blocksize,blocksize);
+}
